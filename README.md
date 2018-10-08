@@ -1,7 +1,7 @@
 # Microsoft Codefundo++ 2018 (Team Sorcerers)
 
 ## Who are we ?
-Basic introduction about the team members.
+Basic introduction of the team members.
 
 ## What are we planning to build ?
 
