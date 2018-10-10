@@ -4,9 +4,9 @@
 
 We are a group of three sophomore students. The team members are as follows:
 
-1. Shivam Kumar Jha (@thealphadollar)
-2. Anuparv Chatterjee (@theartist007)
-3. Navaneeth Suresh (@themousepotato)
+1. Anuprava Chatterjee (@theartist007)
+2. Navaneeth Suresh (@themousepotato)
+3. Shivam Kumar Jha (@thealphadollar)
 
 ## What are we planning to build
 
@@ -52,15 +52,15 @@ Specifically for the part of prediction, we need to look at the pattern of natur
 
 ## What technologies are we using
 
-@theartist007 please update this.
-
-- Maps API
-- Azure Cloud Computing
 - Github for hosting
-- DBMS
+- Microsoft Azure Cloud computing
+- HTML/CSS
+- Javascript
+- JQuery
 - Python
-- React
-
-etc.
+- Flask
+- Twilio API
+- Maps API
+- MySQL/MongoDB
 
 ## Final Notes
