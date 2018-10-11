@@ -57,7 +57,9 @@ Specifically for the part of prediction, we need to look at the pattern of natur
 - HTML/CSS
 - Github for hosting
 - Microsoft Azure Cloud for deployment
+- [Docker](https://www.docker.com)
 - [Flask](http://flask.pocoo.org/)
+- [Elasticsearch](https://github.com/elastic/elasticsearch)
 - [Twilio SMS API](https://www.twilio.com/docs/sms)
 - Maps API (Opensource such as [ModestMaps](http://modestmaps.com/) or [Leaflet](https://leafletjs.com/))
 - SQL Database as a service from [Azure](https://azure.microsoft.com/en-in/services/sql-database/).
