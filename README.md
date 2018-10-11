@@ -40,7 +40,7 @@ Each bullet point has been explained with accordance to it's order in the previo
 
 The project will be provided as a web application in order to pass the hurdle of platform limitation. A simple, elegant and intuitive user interface will be provided along with a simple "help" to get the users as well as relief providers get started with the platform. Since the application will be a webApp, in the future it'll be easier to create mobile apps for the same.
 
-A unique feature of the website will be implementation of the SMS (and telephonic, if time permits) endpoints. This will ensure that the people without internet can also gather information and send help calls to the website without having to go to the website. This will be done as any other automated SMS API endpoint works; a set of keywords to recognize the type of message and then providing all the services (for example providing textual directions to the nearest relief point) through SMS. 
+An appealing feature of the website will be the implementation of the SMS (and telephonic, if time permits) endpoints. This will ensure that the people without internet can also gather information and send help calls to the website without having to go to the website. This will be done as any other automated SMS API endpoint works; a set of keywords to recognize the type of message and then providing all the services (for example providing textual directions to the nearest relief point) through SMS. 
 
 ## What dataset(s) are we using [WIP]
 
@@ -52,15 +52,14 @@ Specifically for the part of prediction, we need to look at the pattern of natur
 
 ## What technologies are we using
 
-- Github for hosting
-- Microsoft Azure Cloud computing
-- HTML/CSS
+- Python 3.6.5 with Pipenv
 - Javascript
-- JQuery
-- Python
-- Flask
-- Twilio API
-- Maps API
-- MySQL/MongoDB
+- HTML/CSS
+- Github for hosting
+- Microsoft Azure Cloud for deployment
+- [Flask](http://flask.pocoo.org/)
+- [Twilio SMS API](https://www.twilio.com/docs/sms)
+- Maps API (Opensource such as [ModestMaps](http://modestmaps.com/) or [Leaflet](https://leafletjs.com/))
+- SQL Database as a service from [Azure](https://azure.microsoft.com/en-in/services/sql-database/).
 
 ## Final Notes
