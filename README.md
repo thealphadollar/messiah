@@ -4,16 +4,16 @@
 
 We are a group of three sophomore students. The team members are as follows:
 
-1. Anuprava Chatterjee (@theartist007)
-2. Navaneeth Suresh (@themousepotato)
-3. Shivam Kumar Jha (@thealphadollar)
+1. Anuprava Chatterjee ([@theartist007](https://github.com/theartist007))
+2. Navaneeth Suresh ([@themousepotato](https://github.com/themousepotato))
+3. Shivam Kumar Jha ([@thealphadollar](https://github.com/thealphadollar))
 
 All three of us are from different regions and different backgrounds and have diverse understanding of the conditions of calamities in our region. This would, I believe help us in fabricating a better solution.
 
 ## What are we planning to build
 
 We are planning to build a service to help save lives and prevent economic losses through mechanisms to predict, prevent, or manage the impact of natural disasters, as accurately as possible and feasible using the dataset procurable.
-The service would :
+The service would:
 
 1. Predict (show probability) the possibility of a natural disaster, in any given location, set by the user.
 
