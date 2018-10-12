@@ -59,7 +59,7 @@ An appealing feature of the website will be the implementation of the SMS (and t
 
 We are planning to build a web app based on the dataset of whole world (or anything close to it). We've been testing data from [gisresources](http://www.gisresources.com/natural-disasters/) or [emdat](https://www.emdat.be/) on various scenarios. Due to the vastness of the dataset, it is not viable to train the deep learning models on our systems, and hence Azure Cloud Resources will be utilized in the process of assessment of various datasets and gauging their accuracy.
 
-We will be using multiple geographical data to decide the zones of disaster prone areas, and population density. We will also procure (or produce) data for predicting and providing precautions according to the divison of zones.
+We will be using multiple geographical data to decide the zones of disaster prone areas, and population density. We will also procure (or produce) data for predicting and providing precautions according to the divison of zones. We have been looking at [Azure's Earth Science data from NASA](https://earthdata.nasa.gov/) and [Azure's US Government Data](https://www.census.gov/data.html) for viable datasets in aiding in our purpose.
 
 Specifically for the part of prediction, we need to look at the pattern of natural disasters for the past decades and draw a pattern and then deduce the possibility and effects of a disaster in an area. The estimate of future damage will be based upon past data and will be calculated using simple data analysis techniques.
 
@@ -80,6 +80,6 @@ Specifically for the part of prediction, we need to look at the pattern of natur
 
 ## Final Notes
 
-We will be trying to give equal resources and time to every field of the problem statement but our main object will be to create a system which can help at the times of disaster; and is even remotely accessible (by SMS for instance). A simple interactive platform between helpers and needy will go a long way in improving the scenario and dependency on various social media platforms. We also have the plan (a fat-fetched one) of embedding a system in the platform where people can add family members and then at times of disaster mark themselves safe (or in danger) and our system will do the hardwork of carrying their message to all. 
+We will be trying to give equal resources and time to every field of the problem statement but our main object will be to create a system which can help at the times of disaster; and is even remotely accessible (by SMS for instance). A simple interactive platform between helpers and needy will go a long way in improving the scenario and dependency on various social media platforms. We also have the plan (a fat-fetched one) of embedding a system in the platform where people can add family members and then at times of disaster mark themselves safe (or in danger) and our system will do the hardwork of carrying their message to all.
 
 We will be testing the technologies (mentioned above) and assessing if they need to be improved (or changed) to achieve the optimum efficiency for the goal.
