@@ -49,9 +49,9 @@ The user will get a map-view of the location he is in, upto a certain radius, wh
 
 An appealing feature of the website will be the implementation of the SMS (and telephonic, if time permits) endpoints. This will ensure that the people without internet can also gather information and send help calls to the website without having to go to the website. This will be done as any other automated SMS API endpoint works; a set of keywords to recognize the type of message and then providing all the services (for example providing textual directions to the nearest relief point) through SMS. 
 
-## What dataset(s) are we using [WIP]
+## What dataset(s) are we using
 
-@themousepotato I guess you can fill this better.
+We are planning to build a web app based on the dataset of whole world. There are difficulties in choosing the exact dataset. We'll be confirming the dataset after we've performed enough data visualisation and analysing the features it provides. We'll be using data from [1](http://www.gisresources.com/natural-disasters/) or [2](https://www.emdat.be/) depending upon the scenario.
 
 We will be using multiple geographical data to decide the zones of disaster prone areas, and population density. We will also require data for predicting and providing precautions.
 
@@ -61,12 +61,12 @@ Specifically for the part of prediction, we need to look at the pattern of natur
 
 - Python 3.6.5 with Pipenv
 - Javascript
-- HTML/CSS
-- Github for hosting
+- HTML5 + CSS3
+- GitHub for hosting
 - Microsoft Azure Cloud for deployment
-- [Docker](https://www.docker.com)
+- [Docker](https://www.docker.com/) to deploy as containers by handling microservices 
 - [Flask](http://flask.pocoo.org/)
-- [Elasticsearch](https://github.com/elastic/elasticsearch)
+- [Elasticsearch](https://www.elastic.co/products/elasticsearch) as a distributed RESTful search engine
 - [Twilio SMS API](https://www.twilio.com/docs/sms)
 - Maps API (Opensource such as [ModestMaps](http://modestmaps.com/) or [Leaflet](https://leafletjs.com/))
 - SQL Database as a service from [Azure](https://azure.microsoft.com/en-in/services/sql-database/).
