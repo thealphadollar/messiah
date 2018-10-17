@@ -27,6 +27,36 @@
       * ---> basic documentation for the entire project explaining<br/>
   * ---> other files<br/>
 
+### Dev Instructions
+
+While developing the project, we will be using Pipenv to manage dependencies.
+The following instructions will help in setting your environment for the first time"
+
+```bash
+sudo pip install pipenv
+cd /path/to/repo
+pipenv shell --three
+pipenv install --dev
+```
+
+Now you're in a virtual environment with all the required packages (even those for
+marked as only for development). To start the virtual environment again,
+
+```bash
+cd /path/to/repo
+pipenv shell
+```
+
+Install new packages only after activating the virtual environment to make sure it
+gets added to the Pipfile automatically.
+
+```bash
+pipenv install [PACKAGE_NAME]
+```
+
+NOTE: Add `--dev` at the end if the package is required only while developing and not
+using.
+
 ## Idea Synopsis
 
 ### Who are we
