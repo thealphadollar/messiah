@@ -13,7 +13,8 @@ import reverse_geocode
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "data/data.db")
 
-# indexes for various operations
+# indexes for various disaster values in database
+DIS_ID = 0
 DIS_DATE = 1
 DIS_CITY = 2
 DIS_COUN = 3
@@ -28,6 +29,42 @@ class DBHandler:
     """
     def __init__(self):
         pass
+
+    def query(self, query_type, keyword):
+        """
+        allows gathering data matching the given keyword for the given query
+
+        :param query_type: column to match e.g "City" NOTE: CASE SENSITIVE
+                Accepted values (as it is in string format) are:
+                    -Date
+                    -City
+                    -Country
+                    -Magnitude
+                    -Source
+                    -DisType
+        :param keyword: keyword to match, e.g. "India" NOTE: FIRST LETTER CAPITAL
+        :return: list containing column values for all disasters indexed as marked at top
+        """
+        keyword = keyword.title()
+        query_cmd = """SELECT * FROM disasters
+                        WHERE {q_type}='{keyword}'
+                        """.format(
+            q_type=query_type,
+            keyword=keyword
+        )
+        with self._connect() as db_cur:
+            db_cur.execute(query_cmd)
+            data = db_cur.fetchall()
+        # print(type(data))
+        # print(data)
+
+        if len(data) != 0:
+            return data
+        else:
+            print("No matching data for {query} in {col} column".format(
+                query=keyword,
+                col=query_type
+            ))
 
     def _instantiate(self):
         """
@@ -130,5 +167,6 @@ class DBHandler:
 
 if __name__ == '__main__':
     manual_db_handle = DBHandler()
-    manual_db_handle._instantiate()
+    # manual_db_handle._instantiate()
     # manual_db_handle._add_data("earthquake", "data/eq.json", True)
+    manual_db_handle.query("Country", "india")
