@@ -1,6 +1,29 @@
-# Microsoft Codefundo++ 2018 (Team Sorcerers)
+# Microsoft CodeFunDo++ 2018 (Team Sorcerers)
 
-## Who are we
+## Implementation
+
+### DirStructure
+
+--> Repo <br/>
+  * ---> src <br/>
+      * ---> frontend <br/>
+          * ---> all the code using HTML, JS for frontend <br/>
+          *  ---> dockerfile <br/>
+          *  ---> README.md explaining backend <br/>
+      * ---> backend <br/>
+          * ---> data <br/>
+              *  ---> database files (if not being stored remotely)<br/>
+          *  ---> python and flask backend<br/>
+          *  ---> dockerfile<br/>
+          *  ---> README.md explaining frontend<br/>
+      * ---> docker-compose file<br/>
+  * ---> docs<br/>
+      * ---> basic documentation for the entire project explaining<br/>
+  * ---> other files<br/>
+
+## Idea Synopsis
+
+### Who are we
 
 We are a group of three sophomore students. The team members are as follows:
 
@@ -10,7 +33,7 @@ We are a group of three sophomore students. The team members are as follows:
 
 All three of us are from different regions and different backgrounds and have diverse understanding of the conditions of calamities in our region. This would, I believe help us in fabricating a better solution.
 
-## What are we planning to build
+### What are we planning to build
 
 We are planning to build a service to help save lives and prevent economic losses through mechanisms to predict, prevent, or manage the impact of natural disasters, as accurately as possible and feasible using the dataset procurable.
 The service would:
@@ -29,7 +52,7 @@ The service would:
 
 7. Show data of previous natural disasters of the area, and grossly present the damage done by them to property and life.
 
-## How does it work
+### How does it work
 
 Each bullet point has been explained with accordance to it's order in the previous heading.
 
@@ -47,7 +70,7 @@ Each bullet point has been explained with accordance to it's order in the previo
 
 7. This can be done easily using the available surveys and records, arranging them in a suitable JSON-like format so that template pages can be filled with them.
 
-## How users can get started with the project
+### How users can get started with the project
 
 The project will be provided as a web application in order to pass the hurdle of platform limitation. A simple, elegant and intuitive user interface will be provided along with a simple "help" to get the users as well as relief providers get started with the platform. Since the application will be a webApp, in the future it'll be easier to create mobile apps for the same.
 
@@ -55,7 +78,7 @@ The user will get a map-view of the location he is in, upto a certain radius, wh
 
 An appealing feature of the website will be the implementation of the SMS (and telephonic, if time permits) endpoints. This will ensure that the people without internet can also gather information and send help calls to the website without having to go to the website. This will be done as any other automated SMS API endpoint works; a set of keywords to recognize the type of message and then providing all the services (for example providing textual directions to the nearest relief point) through SMS.
 
-## What dataset(s) are we using
+### What dataset(s) are we using
 
 We are planning to build a web app based on the dataset of whole world (or anything close to it). We've been testing data from [gisresources](http://www.gisresources.com/natural-disasters/) or [emdat](https://www.emdat.be/) on various scenarios. Due to the vastness of the dataset, it is not viable to train the deep learning models on our systems, and hence Azure Cloud Resources will be utilized in the process of assessment of various datasets and gauging their accuracy.
 
@@ -63,7 +86,7 @@ We will be using multiple geographical data to decide the zones of disaster pron
 
 Specifically for the part of prediction, we need to look at the pattern of natural disasters for the past decades and draw a pattern and then deduce the possibility and effects of a disaster in an area. The estimate of future damage will be based upon past data and will be calculated using simple data analysis techniques.
 
-## What technologies are we using
+### What technologies are we using
 
 - Python 3.6.5 with Pipenv
 - Javascript
@@ -78,7 +101,7 @@ Specifically for the part of prediction, we need to look at the pattern of natur
 - Maps API (Opensource such as [ModestMaps](http://modestmaps.com/) or [Leaflet](https://leafletjs.com/))
 - SQL Database as a service from [Azure](https://azure.microsoft.com/en-in/services/sql-database/).
 
-## Final Notes
+### Final Notes
 
 We will be trying to give equal resources and time to every field of the problem statement but our main object will be to create a system which can help at the times of disaster; and is even remotely accessible (by SMS for instance). A simple interactive platform between helpers and needy will go a long way in improving the scenario and dependency on various social media platforms. We also have the plan (a fat-fetched one) of embedding a system in the platform where people can add family members and then at times of disaster mark themselves safe (or in danger) and our system will do the hardwork of carrying their message to all.
 
