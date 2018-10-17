@@ -5,7 +5,13 @@
 ### DirStructure
 
 --> Repo <br/>
+  * ---> logs <br/>
+      * ---> backend.log <br/>
+      * ---> frontend.log <br/>
   * ---> src <br/>
+      * ---> config <br/>
+          * ---> stores important configuration files
+          * ---> loggerConfig.yaml
       * ---> frontend <br/>
           * ---> all the code using HTML, JS for frontend <br/>
           *  ---> dockerfile <br/>

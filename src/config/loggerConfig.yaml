@@ -1,0 +1,40 @@
+---
+# The file stores logging configuration
+# NOTE: Log address provided relative to repo directory
+version: 0.5
+disable_existing_loggers: True
+formatters:
+  simple:
+    format: "%(asctime)s [%(name)s] [%(levelname)-8s] %(message)s"
+    datefmt: '%m/%d/%Y %I:%M:%S %p'
+  colored:
+    "()": coloredlogs.ColoredFormatter
+    format: "%(asctime)s [%(name)s] [%(levelname)-8s] %(message)s"
+    datefmt: '%m/%d/%Y %H:%M:%S'
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: colored
+    stream: ext://sys.stdout
+    level: INFO
+  backend_file:
+    class: logging.FileHandler  #TODO: to be updated
+    formatter: simple
+    filename: logs/backend.log
+    level: DEBUG
+  frontend_file:
+    class: logging.FileHandler  #TODO: to be updated
+    formatter: simple
+    filename: logs/frontend.log
+    level: DEBUG
+root:
+  level: DEBUG
+  handlers: [console]
+loggers:
+  backend:
+    level: DEBUG
+    handlers: [console, backend_file]
+  frontend:
+    level: DEBUG
+    handler: [console, frontend_file]
+...
