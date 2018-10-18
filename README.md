@@ -57,6 +57,19 @@ pipenv install [PACKAGE_NAME]
 NOTE: Add `--dev` at the end if the package is required only while developing and not
 using.
 
+### Frontend GUI 
+
+* --> A Landing page
+  * --> Title of our project
+  * --> A Navbar having links to different services we are going to provide (as mentioned below)
+* --> About Us
+* --> Page having, map interface saying previous earthquake data, for different locations
+* --> Page, predicting the possibility of the natural disaster, judging the location of the user (optional)
+* --> Page having, map interface showing present location of the user (and plausible relief camp placements, and the shortest route to the closest one)
+* --> Page, which shows precautions and tips on the basis of location of the user
+* --> Page, displaying the SMS functionality procedure, and set up.
+* --> Scope for further improvements(whatever we couldn't do), github link to the repo, and vote of thanks.
+
 ## Idea Synopsis
 
 ### Who are we
