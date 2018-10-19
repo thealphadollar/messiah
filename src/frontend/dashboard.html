@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Messiah</title>
+    </head>
+	<body>
+		<div class="heading">
+			<h1>DASHBOARD</h1>
+		</div>
+		<nav>
+	    	<div class="nav-wrapper">
+		      <a href="#!" class="brand-logo">MESSIAH</a>
+		      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		      <ul class="right hide-on-med-and-down">
+		        <li class="active"><a href="landingpage.html">Home</a></li>
+		        <li><a href="about.html">About Us</a></li>
+		        <li><a href="dashboard.html">Dashboard</a></li>
+		        <li><a href="sms.html">SMS service</a></li>
+		        <li><a href="scope.html">Further Scope</a></li>
+			  </ul>
+	    	</div>
+  		</nav>
+
+  			<ul class="sidenav" id="mobile-demo">
+    			<li class="active"><a href="landingpage.html">Home</a></li>
+		        <li><a href="about.html">About Us</a></li>
+		        <li><a href="dashboard.html">Dashboard</a></li>
+		        <li><a href="sms.html">SMS service</a></li>
+		        <li><a href="scope.html">Further Scope</a></li>
+  </ul>
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript">
+      	$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+      </script>
+    </body>
+  </html>
+        
