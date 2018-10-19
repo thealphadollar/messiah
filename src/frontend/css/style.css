@@ -6,3 +6,16 @@
 	position: relative;
 	left: 10px;
 }
+@media screen and (max-width: 500px) {
+	#globe {
+		cursor: move;
+	}
+}
+@media screen and (min-width: 500px) {
+	#globe {
+		cursor: move;
+		width: 50%;
+		height: 50%;
+		float: left;
+	}
+}

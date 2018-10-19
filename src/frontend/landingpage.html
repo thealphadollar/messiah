@@ -28,6 +28,23 @@
 	    	</div>
   		</nav>
 
+      <canvas id="globe"></canvas>
+      <pre style="font-size: 2rem;">Do you know
+that _____ people
+died in _____
+due to ________ !!</pre>
+
+      <div class="row center">
+    <div class="col s12 m12 l12">
+      <div class="card indigo darken-4">
+        <div class="card-content white-text">
+          <span class="card-title">What is Messiah</span>
+          <p>This will give a basic idea about our mission, the various services we offer, and a guide to the user for getting started. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   			<ul class="sidenav" id="mobile-demo">
     			<li class="active"><a href="landingpage.html">Home</a></li>
 		        <li><a href="about.html">About Us</a></li>
@@ -37,6 +54,11 @@
   </ul>
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+      <script type="text/javascript" src="https://d3js.org/d3-geo.v1.min.js"></script>
+      <script type="text/javascript" src="https://d3js.org/topojson.v2.min.js"></script>
+      <script type="text/javascript" src="https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js"></script>
+      <script type="text/javascript" src="js/rotate.js"></script>
       <script type="text/javascript">
       	$(document).ready(function(){
     $('.sidenav').sidenav();
