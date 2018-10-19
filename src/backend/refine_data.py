@@ -1,5 +1,7 @@
 """
-To refine the data downloaded from the internet
+To refine the data downloaded from the internet, and arrange it in the format we want.
+
+NOT TO BE RUN TWICE ON THE SAME FILE, LEAVE FILES ON WHICH IT HAS BEEN RUN IN THE COMMENT
 """
 import json
 import os
@@ -115,5 +117,5 @@ def refine_random_data():
 if __name__=='__main__':
     # refine_earthquake_data()
     # refine_flood_data()
-    refine_random_data()
+    # refine_random_data()
     pass
