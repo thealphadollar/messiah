@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, abort
 from db_handler import DBHandler
 import json
 import os
@@ -13,16 +13,29 @@ app = Flask(__name__)
 
 @app.route('/history', methods=['GET'])
 def get_history():
-    country = request.args.get('country')
+    """
+    Returns the history of disasters for a country/city
+    """
 
-    db_handle = DBHandler()
-    query = db_handle.query("Country", country)
+    args = ['Country', 'City']
+    query = None
+
+    arg = request.args.to_dict().keys()[0]
+
+    if arg in args:
+        val = request.args.get(arg)
+        db_handle = DBHandler()
+        query = db_handle.query(arg, val)
 
     return jsonify(query)
 
 
 @app.route('/random_facts', methods=['GET'])
 def get_random_facts():
+    """
+    Return a random fact from past years data
+    """
+
     with open(os.path.join(os.path.dirname(__file__), CASUALTY_DATA_FILE)) as f:
         data = json.loads(f.read())
 
@@ -34,6 +47,7 @@ def get_random_facts():
     disaster = data[i]['Type']
 
     return ("Do you know {deaths} number of people died in {year} from {disaster}").format(deaths=deaths, year=year, disaster=disaster)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
