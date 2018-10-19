@@ -2,3 +2,7 @@
 	text-align: center;
 	margin: 0 auto;
 }
+.brand-logo {
+	position: relative;
+	left: 10px;
+}
