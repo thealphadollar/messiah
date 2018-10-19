@@ -169,4 +169,6 @@ if __name__ == '__main__':
     manual_db_handle = DBHandler()
     # manual_db_handle._instantiate()
     # manual_db_handle._add_data("earthquake", "data/eq.json", True)
-    manual_db_handle.query("Country", "india")
+    # manual_db_handle._add_data("flood", "data/floods.json", True)
+    test_data = manual_db_handle.query("Country", "india")
+    print(test_data)
