@@ -7,6 +7,7 @@ import os
 
 EARTHQUAKE_DATA_FILE = "data/eq.json"
 FLOOD_DATA_FILE = "data/floods.json"
+CASUALTY_DATA_FILE = "data/random_facts.json"
 
 
 def refine_earthquake_data():
@@ -65,6 +66,54 @@ def refine_flood_data():
         json.dump(new_fld_data, fld_file)
 
 
+def refine_random_data():
+    """
+    removes unnecessary columns and re-factors from casualty data
+
+    :return: None
+    """
+    path_to_rnd_data = os.path.join(os.path.dirname(__file__), CASUALTY_DATA_FILE)
+    with open(path_to_rnd_data, "r") as rnd_file:
+        rnd_dict = json.load(rnd_file)
+
+    new_rnd_data = []
+
+    for data in rnd_dict:
+        # print(data)
+        # break
+        new_rnd_data.extend([
+            {
+                'Year': data['Year'],
+                'Deaths': data['Drought'],
+                'Type': 'Drought'
+            },
+            {
+                'Year': data['Year'],
+                'Deaths': data['Earthquake'],
+                'Type': 'Earthquake'
+            },
+            {
+                'Year': data['Year'],
+                'Deaths': data['Flood'],
+                'Type': 'Flood'
+            },
+            {
+                'Year': data['Year'],
+                'Deaths': data['Storm'],
+                'Type': 'Storm'
+            },
+            {
+                'Year': data['Year'],
+                'Deaths': data['Volcanic activity'],
+                'Type': 'Volcanic eruption'
+            }
+        ])
+    with open(path_to_rnd_data, "w") as rnd_file:
+        json.dump(new_rnd_data, rnd_file)
+
+
 if __name__=='__main__':
     # refine_earthquake_data()
     # refine_flood_data()
+    refine_random_data()
+    pass
