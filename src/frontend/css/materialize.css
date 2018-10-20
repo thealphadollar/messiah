@@ -4796,7 +4796,8 @@ small {
 
 .card.medium {
   height: 400px;
-  width: 30%;
+  width: 31%;
+  margin: 1%;
 }
 
 .card.large {
