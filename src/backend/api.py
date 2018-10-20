@@ -62,7 +62,7 @@ def get_random_facts():
     for item in data:
         deaths = item['Deaths']
         year = item['Year']
-        disaster = item['Type']
+        disaster = item['Type'].replace(' ', '_')
 
         facts.append('{deaths} {year} {disaster}'.format(deaths=deaths, year=year, disaster=disaster))
 
