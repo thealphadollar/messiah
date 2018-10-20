@@ -1,5 +1,5 @@
 # Microsoft CodeFunDo++ 2018 (Team Sorcerers)
-
+![Messiah logo](https://github.com/thealphadollar/sorcerers-codefundo18/tree/master/src/frontend/img/logo.jpg)
 ## Implementation
 
 ### DirStructure
