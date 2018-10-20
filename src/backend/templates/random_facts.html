@@ -1,0 +1,47 @@
+<p> Do you know that <span id="rotate">number</span> people died in <span id='rotate2'>year</span> due to <span id='rotate3'>disaster</span> ?</p>
+
+    <ul style="display:none">
+        {% for fact in facts %}
+        <li>{{fact}}</li>
+        {% endfor %}
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var terms = $("ul li");
+    
+        var term1 = []
+         var term2 = []
+        var term3 = []
+       
+     for (i=0;i<terms.length;i++){
+       term1.push(terms.eq([i]).text().split(" ")[0])
+       term2.push(terms.eq([i]).text().split(" ")[1])
+       term3.push(terms.eq([i]).text().split(" ")[2])
+      }
+    
+        function rotateTerm() {
+    
+         var ct = $("#rotate").data("term") || 0;
+           var ct2 = $("#rotate2").data("term") || 0;
+         var ct3 = $("#rotate3").data("term") || 0;
+    
+         console.log(terms.eq([ct]).text());
+        
+          $("#rotate").data("term",
+              ct == terms.length -1 ? 0 : ct + 1).text(term1[ct])
+                  .fadeIn().delay(2000).fadeOut(200, rotateTerm);
+    
+               $("#rotate2").data("term",
+              ct2 == terms.length -1 ? 0 : ct2 + 1).text(term2[ct2])
+                  .fadeIn().delay(2000).fadeOut(200, rotateTerm);
+              
+               $("#rotate3").data("term",
+              ct3 == terms.length -1 ? 0 : ct3 + 1).text(term3[ct3])
+                  .fadeIn().delay(2000).fadeOut(200, rotateTerm);
+    
+          }
+        
+        $(rotateTerm);
+    </script>
+    
