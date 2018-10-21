@@ -33,9 +33,9 @@
 
       <canvas id="globe"></canvas>
       <pre style="font-size: 2rem;">Do you know
-that _____ people
-died in _____
-due to ________ !!</pre>
+that <span id="number">____</span> people
+died in <span id="year">_____</span>
+due to <span id="calamity">____</span>s !!</pre>
 
     <form>
       <div class="row center">
@@ -99,6 +99,54 @@ due to ________ !!</pre>
           };
         // alert(options.list);
           $("#textarea1").easyAutocomplete(options);
+    </script>
+    <script>
+
+        var request = new Request("http://127.0.0.1:5000/random_facts?json",
+            {
+               method: "GET"
+            });
+        fetch(request).then(resp => {
+            alert(resp);
+            var data=resp;
+            var data_num = [];
+            var data_dec = [];
+            var data_cal = [];
+
+            for (var i = 0; i < data.length; i++) {
+                data_num.push(data[i][0]);
+                data_dec.push(data[i][1]);
+                data_cal.push(data[i][2].toLowerCase());
+            }
+
+            function rotateTerm() {
+
+                var ct = $("#number").data("term") || 0;
+                var ct2 = $("#year").data("term") || 0;
+                var ct3 = $("#calamity").data("term") || 0;
+
+
+                $("#number").data("term",
+                    ct == data.length - 1 ? 0 : ct + 1).text(data_num[ct])
+                    .fadeIn().delay(2000).fadeOut(200, rotateTerm);
+
+                $("#year").data("term",
+                    ct2 == data.length - 1 ? 0 : ct2 + 1).text(data_dec[ct2])
+                    .fadeIn().delay(2000).fadeOut(200, rotateTerm);
+
+                $("#calamity").data("term",
+                    ct3 == data.length - 1 ? 0 : ct3 + 1).text(data_cal[ct3])
+                    .fadeIn().delay(2000).fadeOut(200, rotateTerm);
+
+            }
+
+            alert("here");
+
+            $(rotateTerm);
+        }).catch(err => {
+            alert("Error in loading disaster data");
+            alert(err)
+        })
     </script>
     </body>
   </html>

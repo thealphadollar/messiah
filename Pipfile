@@ -6,6 +6,8 @@ name = "pypi"
 [dev-packages]
 reverse-geocode = "*"
 future = "*"
+flask = "*"
+flask-cors = "*"
 
 [packages]
 coloredlogs = "*"

@@ -2,6 +2,7 @@
 #-*- coding: utf-8 -*-
 
 from flask import Flask, request, jsonify, render_template, abort
+from flask_cors import CORS, cross_origin
 from db_handler import DBHandler
 from predict import *
 import json
@@ -11,8 +12,12 @@ import random
 CASUALTY_DATA_FILE = "data/random_facts.json"
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 @app.route('/history', methods=['GET'])
+@cross_origin()
 def get_history():
     """
     Returns the history of disasters for a country/city
@@ -49,7 +54,9 @@ def get_random_facts():
     return ("Do you know {deaths} number of people died in {year} from {disaster}").format(deaths=deaths, year=year, disaster=disaster)
 """
 
+
 @app.route('/random_facts', methods=['GET'])
+@cross_origin()
 def get_random_facts():
     """
     Return a random fact from past years data
@@ -61,13 +68,10 @@ def get_random_facts():
     facts = []
 
     for item in data:
-        deaths = item['Deaths']
-        year = item['Year']
-        disaster = item['Type'].replace(' ', '_')
+        facts.append([item['Deaths'], item['Year'], item['Type']])
 
-        facts.append('{deaths} {year} {disaster}'.format(deaths=deaths, year=year, disaster=disaster))
+    return jsonify(facts)
 
-    return render_template('random_facts.html', facts=facts)
 
 
 @app.route('/predict_eq_mag', methods=['GET'])
