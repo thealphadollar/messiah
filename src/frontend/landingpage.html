@@ -6,6 +6,9 @@
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/easy-autocomplete.min.css">
+    <link rel="stylesheet" type="text/css" href="css/flags.css">
+    <link rel="stylesheet" type="text/css" href="css/easy-autocomplete.themes.min.css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>Messiah</title>
@@ -34,12 +37,11 @@ that _____ people
 died in _____
 due to ________ !!</pre>
 
-    
+    <form>
       <div class="row center">
-        <div class="input-field col s12 l4 m4">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Enter your country</label>
-        </div>
+          <div class="input-field col s12 14 m4">
+            <input id="textarea1" />
+          </div>
       </div>
     </form>
   </div>
@@ -70,11 +72,34 @@ due to ________ !!</pre>
       <script type="text/javascript" src="https://d3js.org/topojson.v2.min.js"></script>
       <script type="text/javascript" src="https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js"></script>
       <script type="text/javascript" src="js/rotate.js"></script>
+      <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript" src="js/jquery.easy-autocomplete.min.js"></script>
       <script type="text/javascript">
       	$(document).ready(function(){
     $('.sidenav').sidenav();
   });
       </script>
+    <script>
+        var options = {
+              url: "resources/countries.json",
+              getValue: "name",
+              list: {
+                  match: {
+                      enabled: true
+                  },
+                  maxNumberOfElements: 8
+              },
+            template: {
+                  type: "custom",
+                method: function (value, item) {
+                    return "<span class='flag flag-" + (item.code).toLowerCase() + "' ></span>" + value;
+                }
+            },
+              theme: "round"
+          };
+        // alert(options.list);
+          $("#textarea1").easyAutocomplete(options);
+    </script>
     </body>
   </html>
         
