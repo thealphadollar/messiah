@@ -102,17 +102,24 @@ due to <span id="calamity">____</span>s !!</pre>
     </script>
     <script>
 
-        var request = new Request("http://127.0.0.1:5000/random_facts?json",
-            {
-               method: "GET"
-            });
-        fetch(request).then(resp => {
-            alert(resp);
-            var data=resp;
+        const Http = new XMLHttpRequest();
+        const url = 'http://127.0.0.1:5000/random_facts';
+        Http.open("GET", url);
+        Http.send();
+
+        // alert("here");
+        Http.onreadystatechange = (err) => {
+            // alert(resp.json());
+            var data=eval("(" + Http.responseText + ")");
+            // alert(data.length);
+            // alert(data[0][0]);
+            // console.log(data);
+            // alert(resp.text());
             var data_num = [];
             var data_dec = [];
             var data_cal = [];
 
+            // alert(data[0][0]);
             for (var i = 0; i < data.length; i++) {
                 data_num.push(data[i][0]);
                 data_dec.push(data[i][1]);
@@ -140,13 +147,10 @@ due to <span id="calamity">____</span>s !!</pre>
 
             }
 
-            alert("here");
+            console.log("here");
 
             $(rotateTerm);
-        }).catch(err => {
-            alert("Error in loading disaster data");
-            alert(err)
-        })
+        }
     </script>
     </body>
   </html>
