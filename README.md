@@ -109,7 +109,7 @@ The service would:
 
 Each bullet point has been explained with accordance to its order in the previous heading.
 
-1. Using the global dataset available (which is, frankly, not up to the mark) we can form a pattern in the occurrence of global disasters and combining it with the susceptibility of a disaster according to geography, we can come up with probability of various disasters occurring in near future.
+1. Using the global dataset available (which is, frankly, not up to the mark) we can form a pattern in the occurrence of global disasters and combining it with the susceptibility of a disaster according to geography, we can come up with the probability of various disasters occurring in near future.
 
 2. Will be done by parsing an user's location (or manually taking it for relief centres) and then assessing the population density distribution of the area (in peace times) and also the impact of the disaster if any ongoing. Through testing multiple algorithms, a suitable weight will be chosen for the two.
 
@@ -137,7 +137,7 @@ We are planning to build a web app based on the dataset of whole world (or anyth
 
 We will be using multiple geographical data to decide the zones of disaster prone areas, and population density. We will also procure (or produce) data for predicting and providing precautions according to the division of zones. We have been looking at [Azure's Earth Science data from NASA](https://earthdata.nasa.gov/) and [Azure's US Government Data](https://www.census.gov/data.html) for viable datasets in aiding in our purpose.
 
-Specifically for the part of prediction, we need to look at the pattern of natural disasters for the past decades and draw a pattern and then deduce the possibility and effects of a disaster in an area. The estimate of future damage will be based upon past data and will be calculated using simple data analysis techniques.
+Specifically for the part of prediction, we need to look at the pattern of natural disasters for the past decades and draw a pattern and then deduce the possibility and effects of a disaster in an area. The estimate of future damage will be based on past data and will be calculated using simple data analysis techniques.
 
 ### What technologies are we using
 
