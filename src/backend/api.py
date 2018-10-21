@@ -3,6 +3,7 @@
 
 from flask import Flask, request, jsonify, render_template, abort
 from db_handler import DBHandler
+from predict import *
 import json
 import os
 import random
@@ -67,6 +68,21 @@ def get_random_facts():
         facts.append('{deaths} {year} {disaster}'.format(deaths=deaths, year=year, disaster=disaster))
 
     return render_template('random_facts.html', facts=facts)
+
+
+@app.route('/predict_eq_mag', methods=['GET'])
+def get_eq_mag():
+    """
+    Predict Earthquake from lattitude, longitude, depth, date
+    """
+
+    args = request.args.to_dict()
+    lat = args['lat']
+    long = args['long']
+    depth = args['depth']
+    date = args['date']
+
+    return str(predict_eq(lat, long, depth, date))
 
 if __name__ == '__main__':
     app.run(debug=True)
