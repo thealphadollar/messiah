@@ -3,8 +3,8 @@
 
 from flask import Flask, request, jsonify, render_template, abort
 from flask_cors import CORS, cross_origin
-from db_handler import DBHandler
-from predict import *
+from .db_handler import DBHandler
+from .predict import *
 import json
 import os
 import random
