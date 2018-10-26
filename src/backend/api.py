@@ -8,6 +8,7 @@ from predict import *
 import json
 import os
 import random
+import datetime
 
 CASUALTY_DATA_FILE = "data/random_facts.json"
 
@@ -84,9 +85,17 @@ def get_eq_mag():
     lat = args['lat']
     long = args['long']
     depth = args['depth']
-    date = args['date']
 
-    return str(predict_eq(lat, long, depth, date))
+    try:
+        date = args['date']
+    
+    except KeyError:
+        now = datetime.datetime.now()
+        date = '%s/%s/%s' % (now.month, now.day, now.year)
+
+
+
+    return str(predict_eq(lat, long, depth, str(date)))
 
 if __name__ == '__main__':
     app.run(debug=True)
