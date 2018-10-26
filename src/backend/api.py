@@ -98,4 +98,4 @@ def get_eq_mag():
     return str(predict_eq(lat, long, depth, str(date)))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
