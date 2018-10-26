@@ -44,6 +44,44 @@
 			</script>
 			
 			<p style="padding:10px;"> Messiah is open for developers to use our data. We offer a RESTful API to develop apps for developers. See documentation below: </p>
-    </body>
+			<table class="highlight" style="margin:10px;">
+				<thead>
+				<th>
+					<tr>
+					<td> Path </td>
+					<td> Args </td>
+					<td> Method </td>
+					<td> Use </td>
+					</tr>
+				</th>
+				</thead>
+				<tbody>
+				<tr>
+					<td> /history </td>
+					<td> City/Country </td>
+					<td> GET </td>
+					<td> Lists the history of past year disasters. </td>
+				</tr>
+				<tr>
+						<td> /show_random_facts </td>
+						<td> - </td>
+						<td> GET </td>
+						<td> Show some random fact based on past year data static as in our homepage. </td>
+				</tr>
+				<tr>
+						<td> /random_facts </td>
+						<td> - </td>
+						<td> GET </td>
+						<td> Returns {Deaths, Year, Type} randomly in raw format. </td>
+				</tr>
+				<tr>
+						<td> /predict_eq_mag </td>
+						<td> Lattitude, Longitude, Depth, Date(optional) </td>
+						<td> GET </td>
+						<td> Returns magnitude of possible earthquake in current or given date. </td>
+				</tr>
+			</tbody>
+			</table>
+		</body>
   </html>
         
