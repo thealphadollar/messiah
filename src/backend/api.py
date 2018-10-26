@@ -37,9 +37,8 @@ def get_history():
     return jsonify(query)
 
 
-"""
-@app.route('/random_facts', methods=['GET'])
-def get_random_facts():
+@app.route('/show_random_facts', methods=['GET'])
+def show_random_facts():
     #Return a random fact from past years data
 
     with open(os.path.join(os.path.dirname(__file__), CASUALTY_DATA_FILE)) as f:
@@ -52,8 +51,7 @@ def get_random_facts():
     year = data[i]['Year']
     disaster = data[i]['Type']
 
-    return ("Do you know {deaths} number of people died in {year} from {disaster}").format(deaths=deaths, year=year, disaster=disaster)
-"""
+    return ("Do you know {deaths} number of people died in {year} from {disaster}?").format(deaths=deaths, year=year, disaster=disaster)
 
 
 @app.route('/random_facts', methods=['GET'])
