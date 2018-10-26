@@ -11,6 +11,9 @@ flask-cors = "*"
 
 [packages]
 coloredlogs = "*"
+itsdangerous = "*"
+tensorflow = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.6"
