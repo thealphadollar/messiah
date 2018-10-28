@@ -2,6 +2,12 @@
 ![Messiah logo](https://github.com/thealphadollar/sorcerers-codefundo18/raw/master/src/frontend/img/logo.jpg)
 ## Implementation
 
+### Deployment
+
+The backend of the application is deployed at https://cfd-backend.herokuapp.com/<br/>
+The webapp is hosted on Azure at https://messiah-cfd.azurewebsites.net
+
+
 ### DirStructure
 
 --> Repo <br/>
