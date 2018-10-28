@@ -91,6 +91,7 @@
                     <tbody id="past_data">
                     </tbody>
                   </table>
+                <p align="center" id="view_more_link"></p>
             </span>
         </div>
     </div>
@@ -129,6 +130,7 @@
 
             const Http = new XMLHttpRequest();
             const url = 'https://cfd-backend.herokuapp.com/history'+'?Country='+searchQuery;
+            const JSONurl = 'https://cfd-backend.herokuapp.com/history_full'+'?Country='+searchQuery;
             // alert(url);
             Http.open("GET", url);
             // Http.setRequestHeader("Country", searchQuery);
@@ -154,8 +156,8 @@
                 }
                 // alert(tableHtml);
                 document.getElementById("past_data").innerHTML=tableHtml;
-
-            }
+                document.getElementById("view_more_link").innerHTML="<a href="+JSONurl+" target='_blank'>Download Full History</a>";
+            };
 
         </script>
       <script type="text/javascript" src="js/materialize.min.js"></script>

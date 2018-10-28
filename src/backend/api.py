@@ -43,6 +43,26 @@ def get_history():
     return jsonify(query)
 
 
+@app.route('/history_full', methods=['GET'])
+@cross_origin()
+def get_full_history():
+    """
+    Returns the history of disasters for a country/city
+    """
+
+    args = ['Country', 'City']
+    query = None
+
+    arg = list(request.args.to_dict().keys())[0]
+
+    if arg in args:
+        val = request.args.get(arg)
+        db_handle = DBHandler()
+        query = db_handle.query(arg, val)
+
+    return jsonify(query)
+
+
 @app.route('/show_random_facts', methods=['GET'])
 def show_random_facts():
     #Return a random fact from past years data
