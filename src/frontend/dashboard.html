@@ -195,12 +195,41 @@
         
         <script type="text/javascript">
           function my_map_add() {
-          var myMapCenter = new google.maps.LatLng(28.5383866, 77.34916609);
-          var myMapProp = {center:myMapCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-          var map = new google.maps.Map(document.getElementById("my_map_add"),myMapProp);
-          var marker = new google.maps.Marker({position:myMapCenter});
-          marker.setMap(map);
-          }
+              var fullLink = window.location.href;
+              // alert(fullLink);
+              var splitLink = fullLink.split("=");
+              searchQuery = "India";
+              if(splitLink.length>1){
+                  searchQuery = splitLink[1].replace(/%20/g, " ");
+              }
+
+              const Http2 = new XMLHttpRequest();
+              const geocodeAPIUrl = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false&key=AIzaSyA6fgw91RH92M7geEztUDKi1DeEOR4dmak&address='+searchQuery;
+              // alert(url);
+              Http2.open("GET", geocodeAPIUrl);
+              // Http.setRequestHeader("Country", searchQuery);
+              Http2.send();
+
+              // alert("here");
+              Http2.onreadystatechange = (err) => {
+                  var data = eval("(" + Http2.responseText + ")");
+                  var lat = data["results"][0]["geometry"]["location"]["lat"];
+                  var lng = data["results"][0]["geometry"]["location"]["lng"];
+
+
+                  var myMapCenter = new google.maps.LatLng(lat, lng);
+                  var myMapProp = {
+                      center: myMapCenter,
+                      zoom: 12,
+                      scrollwheel: false,
+                      draggable: false,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP
+                  };
+                  var map = new google.maps.Map(document.getElementById("my_map_add"), myMapProp);
+                  var marker = new google.maps.Marker({position: myMapCenter});
+                  marker.setMap(map);
+                }
+              }
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6fgw91RH92M7geEztUDKi1DeEOR4dmak&callback=my_map_add"></script>
 
