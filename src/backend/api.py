@@ -98,7 +98,6 @@ def get_random_facts():
     return jsonify(facts)
 
 
-
 @app.route('/predict_eq_mag', methods=['GET'])
 def get_eq_mag():
     """
