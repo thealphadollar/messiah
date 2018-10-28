@@ -12,12 +12,11 @@ import os
 EARTHQUAKE_DATA_FILE = "data/earthquake_db.csv"
 TRAINED_WEIGHTS_FILE = "data/earthquake_model.ckpt"
 
-df1=pd.read_csv(os.path.join(os.path.dirname(__file__), EARTHQUAKE_DATA_FILE))
-epoch = datetime(1970, 1, 1)
-
-
 def mapdateTotime(x):
     try:
+        print("\n\n")
+        print(x)
+        print('\n\n')
         dt = datetime.strptime(x, "%m/%d/%Y")
 
     except ValueError:
@@ -28,7 +27,12 @@ def mapdateTotime(x):
     return diff.total_seconds()
 
 
-def predict_eq(lat, long, depth, date, train=False):
+def predict_eq(lat, long, depth, date, train=True):
+    global epoch, df1
+
+    df1 = pd.read_csv(os.path.join(os.path.dirname(__file__), EARTHQUAKE_DATA_FILE))
+    epoch = datetime(1970, 1, 1)
+
     # Preprocess data
     #--------------------------------------------------
     df1.Date = df1.Date.apply(mapdateTotime)
