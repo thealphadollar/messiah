@@ -27,12 +27,18 @@ def get_history():
     args = ['Country', 'City']
     query = None
 
-    arg = request.args.to_dict().keys()[0]
+    arg = list(request.args.to_dict().keys())[0]
 
     if arg in args:
         val = request.args.get(arg)
         db_handle = DBHandler()
         query = db_handle.query(arg, val)
+
+    # reducing the length of the response
+    if len(query) < 5:
+        query = random.sample(query, len(query))
+    else:
+        query = random.sample(query, 5)
 
     return jsonify(query)
 
