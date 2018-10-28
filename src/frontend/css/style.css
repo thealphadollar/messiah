@@ -1,6 +1,7 @@
 .heading h1 {
 	text-align: center;
-	margin: 0 auto;
+	margin: 1rem auto;
+	color: #ffff99;
 }
 .brand-logo {
 	position: relative;
@@ -21,7 +22,7 @@
 }
 
 html {
-	background-color: #ffffb3;
+	background-color: #800000;
 }
 a {
 	text-decoration: none;
