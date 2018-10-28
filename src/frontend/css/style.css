@@ -26,8 +26,29 @@ html {
 }
 a {
 	text-decoration: none;
-	color: yellow;
+	color: red;
 }
 .map {
  	height: 200%;
+}
+.card-heading {
+	background: #009933;
+	color: #fff;
+	margin: 0;
+	padding: .7rem;
+}
+.card-heading-bottomcards {
+	background: #009933;
+	color: #fff;
+	margin: -24px -24px 0 -24px;
+	padding: .7rem;
+}
+h4 {
+	margin: 0;
+}
+#my_map_add {
+	width:100%;
+	height:240px; 
+	margin: 0; 
+	padding: -24px;
 }

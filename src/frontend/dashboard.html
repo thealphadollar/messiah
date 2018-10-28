@@ -16,7 +16,7 @@
 			<h1>DASHBOARD</h1>
 		</div>
 		<nav>
-	    	<div class="nav-wrapper red">
+	    	<div class="nav-wrapper" style="background: #000066;">
 		      <a href="#!" class="brand-logo">MESSIAH</a>
 		      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
@@ -28,27 +28,30 @@
 			  </ul>
 	    	</div>
   		</nav>
-
+      <br>
       <div class="row center">
 
       <div class="col s12 m6 l6 ">
       <div class="card">
-        <div class="card-content green darken-2">
-        <div id="my_map_add" style="width:100%;height:300px; margin: 0; padding: 0;">
-        </div>
-        </div>
-        
-         <h4>Your given Location</h4>
+      <div class="card-heading">
+                 <h4>Your given Location</h4>
           <p>This map shows the real-time map of your given location.</p>
+      </div>
+        <div class="card-content" style="background: #ffff99">
+
+        <div id="my_map_add">
+        </div>
+        </div>
         </div>
       </div>
        
 
     <div class="col s12 m6 l6">
         <div class="card">
-            <div class="card-content teal">
-                <h3>Precautions</h3>
-            </div>
+            <div class="card-heading">
+                 <h4>Prevention tips</h4>
+          <p>This shows you handy tips to save you from your specific natural disaster.</p>
+      </div>
             <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">
                     <li class="tab"><a class="active" href="#test4">Before</a></li>
@@ -56,7 +59,7 @@
                     <li class="tab"><a href="#test6">After</a></li>
                 </ul>
             </div>
-            <div class="card-content grey lighten-4">
+            <div class="card-content" style="background: #ffff99;">
                 <div id="test4">
                     <ul class="collection">
                         <li class="collection-item">Learn first aid.</li>
@@ -86,8 +89,12 @@
     </div>
 
     <div class="col s12 m6 l6">
-        <div class="card-panel teal">
-            <span class="white-text">Past Disasters Data
+        <div class="card-panel" style="background: #ffff99;">
+            <div class="card-heading-bottomcards">
+                 <h4>Past Data</h4>
+          <p>Curious about the past calamities at the given location ? Here's a glimpse.</p>
+      </div>
+      <span>
                   <table class="highlight centered responsive-table">
                     <thead>
                       <tr>
@@ -137,16 +144,20 @@
                         </tr>
                     </tbody>
                   </table>
-                <p align="center" id="view_more_link"></p>
+                <p align="center" id="view_more_link" style></p>
             </span>
         </div>
     </div>
 
     <div class="col s12 m6 l6">
-        <div class="card-panel teal">
-            <h3>EarthQuake Prediction</h3><br/>
-            <h4 class="white-text" id="earth_pred">
-                pardon our slow machines...<br/>
+        <div class="card-panel" style="background: #ffff99;" >
+          <div class="card-heading-bottomcards">
+                 <h4>Prediction</h4>
+          <p>This predicts the intensity of a possible earthquake at your given location.</p>
+      </div>
+            <br>
+            <h4 class="black-text" id="earth_pred">
+                Pardon our slow machines...<br/>
                 <img src="img/loading.gif">
             </h4>
         </div>
@@ -155,9 +166,9 @@
   </div>
 
   			<ul class="sidenav" id="mobile-demo">
-    			<li class="active"><a href="index.html">Home</a></li>
+    			<li><a href="index.html">Home</a></li>
 		        <li><a href="about.html">About Us</a></li>
-		        <li><a href="dashboard.html">Dashboard</a></li>
+		        <li class="active"><a href="dashboard.html">Dashboard</a></li>
 		        <li><a href="api.html">API service</a></li>
 		        <li><a href="scope.html">Further Scope</a></li>
   </ul>
