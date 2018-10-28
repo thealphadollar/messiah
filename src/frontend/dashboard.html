@@ -75,16 +75,24 @@
     </div>
 
     <div class="col s12 m6 l6">
-      <div class="card">
-        <div class="card-image">
-          <img src="img/text-logo.png">
-          
+        <div class="card-panel teal">
+            <span class="white-text">Previous Disaster Data
+                  <table>
+                    <thead>
+                      <tr>
+                          <th>Date</th>
+                          <th>Place</th>
+                          <th>Disaster</th>
+                          <th>Severity</th>
+                          <th>Deaths</th>
+                      </tr>
+                    </thead>
+
+                    <tbody id="past_data">
+                    </tbody>
+                  </table>
+            </span>
         </div>
-        <div class="card-content">
-          <h4>Previous Earthquake data</h4>
-          <p>Curious about history of disasters that happened in either your City/Country? Use this feature.</p>
-        </div>
-      </div>
     </div>
 
     <div class="col s12 m6 l6">
@@ -110,6 +118,46 @@
 		        <li><a href="scope.html">Further Scope</a></li>
   </ul>
       <!--JavaScript at end of body for optimized loading-->
+        <script>
+            var fullLink = window.location.href;
+            // alert(fullLink);
+            var splitLink = fullLink.split("=");
+            searchQuery = "India";
+            if(splitLink.length>1){
+                searchQuery = splitLink[1].replace(/%20/g, " ");
+            }
+
+            const Http = new XMLHttpRequest();
+            const url = 'https://cfd-backend.herokuapp.com/history'+'?Country='+searchQuery;
+            // alert(url);
+            Http.open("GET", url);
+            // Http.setRequestHeader("Country", searchQuery);
+            Http.send();
+
+            // alert("here");
+            Http.onreadystatechange = (err) => {
+                // alert(resp.json());
+                var data=eval("(" + Http.responseText + ")");
+                // alert(data.length);
+                // alert(data.length);
+                // console.log(data);
+                // alert(resp.text());
+                var tableHtml = "";
+                for(var i=0; i<data.length; i++){
+                    tableHtml= tableHtml + "<tr>\n" +
+                        "                        <td>"+data[i][1]+"</td>\n" +
+                        "                        <td>"+data[i][2]+"</td>\n" +
+                        "                        <td>"+data[i][6]+"</td>\n" +
+                        "                        <td>"+data[i][4]+"</td>\n" +
+                        "                        <td>"+data[i][0]+"</td>\n" +
+                        "                      </tr>\n"
+                }
+                // alert(tableHtml);
+                document.getElementById("past_data").innerHTML=tableHtml;
+
+            }
+
+        </script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript">
       	$(document).ready(function(){
