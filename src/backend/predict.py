@@ -10,6 +10,7 @@ import os
 
 
 EARTHQUAKE_DATA_FILE = "data/earthquake_db.csv"
+TRAINED_WEIGHTS_FILE = "data/earthquake_model.ckpt"
 
 df1=pd.read_csv(os.path.join(os.path.dirname(__file__), EARTHQUAKE_DATA_FILE))
 epoch = datetime(1970, 1, 1)
@@ -27,7 +28,7 @@ def mapdateTotime(x):
     return diff.total_seconds()
 
 
-def predict_eq(lat, long, depth, date):
+def predict_eq(lat, long, depth, date, train=False):
     # Preprocess data
     #--------------------------------------------------
     df1.Date = df1.Date.apply(mapdateTotime)
@@ -131,23 +132,24 @@ def predict_eq(lat, long, depth, date):
     # Initialization and session
     init = tf.global_variables_initializer()
 
-    with tf.Session() as sess:
-        sess.run(init)
+    if train:
+        with tf.Session() as sess:
+            sess.run(init)
 
-        print("Training loss:",sess.run([mean_square],feed_dict={X:InputX1train,Y:InputY1train}))
+            print("Training loss:",sess.run([mean_square],feed_dict={X:InputX1train,Y:InputY1train}))
 
-        for i in range(training_iterations):
-            sess.run([train_step],feed_dict={X:InputX1train,Y:InputY1train})
-            if i%display_iterations ==0:
-                print("Training loss is:",sess.run([mean_square],feed_dict={X:InputX1train,Y:InputY1train}),"at itertion:",i)
-                print("Validation loss is:",sess.run([mean_square],feed_dict={X:InputX1v,Y:InputY1v}),"at itertion:",i)
+            for i in range(training_iterations):
+                sess.run([train_step],feed_dict={X:InputX1train,Y:InputY1train})
+                if i%display_iterations ==0:
+                    print("Training loss is:",sess.run([mean_square],feed_dict={X:InputX1train,Y:InputY1train}),"at itertion:",i)
+                    print("Validation loss is:",sess.run([mean_square],feed_dict={X:InputX1v,Y:InputY1v}),"at itertion:",i)
 
-        # Save the variables to disk.
-        save_path = saver.save(sess, "/tmp/earthquake_model.ckpt")
-        print("Model saved in file: %s" % save_path)
+            # Save the variables to disk.
+            save_path = saver.save(sess, os.path.join(os.path.dirname(__file__), TRAINED_WEIGHTS_FILE))
+            print("Model saved in file: %s" % save_path)
 
-        print("Final training loss:",sess.run([mean_square],feed_dict={X:InputX1train,Y:InputY1train}))
-        print("Final validation loss:",sess.run([mean_square],feed_dict={X:InputX1v,Y:InputY1v}))
+            print("Final training loss:",sess.run([mean_square],feed_dict={X:InputX1train,Y:InputY1train}))
+            print("Final validation loss:",sess.run([mean_square],feed_dict={X:InputX1v,Y:InputY1v}))
 
 
     # Test model
@@ -165,7 +167,7 @@ def predict_eq(lat, long, depth, date):
 
     with tf.Session() as sess:
         # Restore variables from disk for validation.
-        saver.restore(sess, "/tmp/earthquake_model.ckpt")
+        saver.restore(sess, os.path.join(os.path.dirname(__file__), TRAINED_WEIGHTS_FILE))
         print("Model restored.")
         #print("Final validation loss:",sess.run([mean_square],feed_dict={X:InputX1v,Y:InputY1v}))
 
