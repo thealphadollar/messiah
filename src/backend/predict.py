@@ -14,9 +14,9 @@ TRAINED_WEIGHTS_FILE = "data/earthquake_model.ckpt"
 
 def mapdateTotime(x):
     try:
-        print("\n\n")
-        print(x)
-        print('\n\n')
+        # print("\n\n")
+        # print(x)
+        # print('\n\n')
         dt = datetime.strptime(x, "%m/%d/%Y")
 
     except ValueError:
@@ -44,14 +44,14 @@ def predict_eq(lat, long, depth, date, train=True):
     InputX1 = col1.as_matrix()
     InputY1 = col2.as_matrix()
 
-    print(InputX1)
+    # print(InputX1)
 
     # Min-max Normalization
     X1_min = np.amin(InputX1,0)
     X1_max = np.amax(InputX1,0)
 
-    print("Mininum values:",X1_min)
-    print("Maximum values:",X1_max)
+    # print("Mininum values:",X1_min)
+    # print("Maximum values:",X1_max)
 
     Y1_min = np.amin(InputY1)     
     Y1_max = np.amax(InputY1) 
@@ -140,7 +140,7 @@ def predict_eq(lat, long, depth, date, train=True):
         with tf.Session() as sess:
             sess.run(init)
 
-            print("Training loss:",sess.run([mean_square],feed_dict={X:InputX1train,Y:InputY1train}))
+            # print("Training loss:",sess.run([mean_square],feed_dict={X:InputX1train,Y:InputY1train}))
 
             for i in range(training_iterations):
                 sess.run([train_step],feed_dict={X:InputX1train,Y:InputY1train})
@@ -150,10 +150,10 @@ def predict_eq(lat, long, depth, date, train=True):
 
             # Save the variables to disk.
             save_path = saver.save(sess, os.path.join(os.path.dirname(__file__), TRAINED_WEIGHTS_FILE))
-            print("Model saved in file: %s" % save_path)
+            # print("Model saved in file: %s" % save_path)
 
-            print("Final training loss:",sess.run([mean_square],feed_dict={X:InputX1train,Y:InputY1train}))
-            print("Final validation loss:",sess.run([mean_square],feed_dict={X:InputX1v,Y:InputY1v}))
+            # print("Final training loss:",sess.run([mean_square],feed_dict={X:InputX1train,Y:InputY1train}))
+            # print("Final validation loss:",sess.run([mean_square],feed_dict={X:InputX1v,Y:InputY1v}))
 
 
     # Test model
@@ -172,11 +172,11 @@ def predict_eq(lat, long, depth, date, train=True):
     with tf.Session() as sess:
         # Restore variables from disk for validation.
         saver.restore(sess, os.path.join(os.path.dirname(__file__), TRAINED_WEIGHTS_FILE))
-        print("Model restored.")
+        # print("Model restored.")
         #print("Final validation loss:",sess.run([mean_square],feed_dict={X:InputX1v,Y:InputY1v}))
 
         output = sess.run([output_layer],feed_dict={X:InputX1test})
-        print("output:", output)
+        # print("output:", output)
 
     return output[0][0][0]
 

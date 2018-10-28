@@ -108,7 +108,9 @@
     <div class="col s12 m6 l6">
         <div class="card-panel teal">
             <h3>EarthQuake Prediction</h3><br/>
-            <h4 class="white-text" id="earth_pred"><img src="img/loading.gif">
+            <h4 class="white-text" id="earth_pred">
+                pardon our slow machines...<br/>
+                <img src="img/loading.gif">
             </h4>
         </div>
     </div>
@@ -184,7 +186,11 @@
 
                 Http2.onreadystatechange = (err) => {
                     // alert(Http2.responseText);
+<<<<<<< HEAD
                     document.getElementById("earth_pred").innerText="The predicted magnitude of next Earthquake of depth 10 KM in "+searchQuery+" is " + Http2.responseText;
+=======
+                    document.getElementById("earth_pred").innerText="The predicted magnitude of next earthquake (at a depth of 10 kilometers) in "+searchQuery+" is " + Http2.responseText;
+>>>>>>> 7132f48773ebb017422193413c0a5e022866b8cc
                 }
             }
         </script>
