@@ -63,7 +63,7 @@
       </div>
       </div>
       <div class="container">  <!--Details about the authors-->
-          
+
           <div>
               <h3 style="color: #fff;">The Team Behind Messiah</h3>
           </div>
@@ -122,7 +122,7 @@
                             </div>
                         </div>
                     </div>
-            
+
       </div>
   </div>
         <div>
@@ -131,6 +131,16 @@
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/materialize.js"></script>
+      <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript">
+          $(document).ready(function () {
+              $(".card").hover(function () {
+                  $(this).find('> .card-image > img.activator').click();
+              }, function () {
+                  $(this).find('> .card-reveal > .card-title').click();
+              })
+          })
+      </script>
       <script type="text/javascript">
       	$(document).ready(function(){
     $('.sidenav').sidenav();
@@ -138,4 +148,3 @@
       </script>
     </body>
   </html>
-        
