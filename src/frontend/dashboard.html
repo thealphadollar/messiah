@@ -234,7 +234,7 @@
 
                 Http2.onreadystatechange = (err) => {
                     // alert(Http2.responseText);
-                    document.getElementById("earth_pred").innerText="The predicted magnitude of next earthquake (at a depth of 10 kilometers) in "+searchQuery+" is " + Http2.responseText;
+                    document.getElementById("earth_pred").innerText="The predicted magnitude of next earthquake (at a depth of 10 kilometers) in "+searchQuery.replace(/\+/g," ")+" is " + Http2.responseText;
                 }
             }
         </script>
