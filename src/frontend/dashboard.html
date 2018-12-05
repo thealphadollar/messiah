@@ -172,8 +172,9 @@
 		        <li><a href="api.html">API service</a></li>
 		        <li><a href="scope.html">Further Scope</a></li>
   </ul>
-      <!--JavaScript at end of body for optimized loading-->
-        <script>
+    </body>
+     <!--JavaScript at end of body for optimized loading-->
+     <script>
             var fullLink = window.location.href;
             // alert(fullLink);
             var splitLink = fullLink.split("=");
@@ -193,7 +194,7 @@
             // alert("here");
             Http.onreadystatechange = (err) => {
                 // alert(resp.json());
-                var data=eval("(" + Http.responseText + ")");
+                var data = JSON.parse(Http.responseText);
                 // alert(data.length);
                 // alert(data.length);
                 // console.log(data);
@@ -222,7 +223,7 @@
 
             // alert("here");
             Http2.onreadystatechange = (err) => {
-                var data=eval("(" + Http2.responseText + ")");
+                var data = JSON.parse(Http2.responseText);
                 var lat = data["results"][0]["geometry"]["location"]["lat"];
                 var lng = data["results"][0]["geometry"]["location"]["lng"];
                 // alert(lat);
@@ -258,7 +259,7 @@
 
               // alert("here");
               Http2.onreadystatechange = (err) => {
-                  var data = eval("(" + Http2.responseText + ")");
+                  var data = JSON.parse(Http2.responseText);
                   var lat = data["results"][0]["geometry"]["location"]["lat"];
                   var lng = data["results"][0]["geometry"]["location"]["lng"];
 
@@ -283,15 +284,14 @@
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript">
       	$(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
+            $('.sidenav').sidenav();
+        });
         $(document).ready(function(){
-  $('ul.tabs').tabs();
-});
-$(document).ready(function(){
-  $('ul.tabs').tabs('select_tab', 'tab_id');
-});
+            $('ul.tabs').tabs();
+        });
+        $(document).ready(function(){
+            $('ul.tabs').tabs('select_tab', 'tab_id');
+        });
       </script>
-    </body>
   </html>
         
