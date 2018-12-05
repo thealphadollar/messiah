@@ -5,10 +5,10 @@
 ### Deployment
 
 The backend of the application is deployed at https://cfd-backend.herokuapp.com/<br/>
-The webapp is hosted on Azure at https://messiah-cfd.azurewebsites.net
+The frontend website is hosted on Heroku at https://messiah-cfd.herokuapp.com/
 
 
-### DirStructure
+### Directory Structure
 
 --> Repo <br/>
   * ---> logs <br/>
@@ -20,17 +20,17 @@ The webapp is hosted on Azure at https://messiah-cfd.azurewebsites.net
           * ---> loggerConfig.yaml
       * ---> frontend <br/>
           * ---> all the code using HTML, JS for frontend <br/>
-          *  ---> dockerfile <br/>
-          *  ---> README.md explaining backend <br/>
+          *  ---> _Dockerfile_ <br/>
+          *  ---> _README.md explaining backend_ <br/>
       * ---> backend <br/>
           * ---> data <br/>
               *  ---> database files (if not being stored remotely)<br/>
           *  ---> python and flask backend<br/>
-          *  ---> dockerfile<br/>
-          *  ---> README.md explaining frontend<br/>
-      * ---> docker-compose file<br/>
+          *  ---> _Dockerfile_<br/>
+          *  ---> _README.md explaining frontend_ <br/>
+      * ---> _docker-compose file_<br/>
   * ---> docs<br/>
-      * ---> basic documentation for the entire project explaining<br/>
+      * ---> _basic documentation for the entire project explaining_ <br/>
   * ---> other files<br/>
 
 ### Dev Instructions
@@ -77,7 +77,7 @@ using.
     * --> Page, predicting the possibility of the natural disaster, judging the location of the user (optional)
     * --> Page having, map interface showing present location of the user (and plausible relief camp placements, and the shortest route to the closest one)
     * --> Page, which shows precautions and tips on the basis of location of the user
-* --> A static page, displaying the SMS functionality procedure, and set up.
+* --> _A static page, displaying the SMS functionality procedure, and set up._
 * --> Scope for further improvements(whatever we couldn't do), github link to the repo, and vote of thanks.
 
 ## Idea Synopsis
@@ -133,9 +133,9 @@ Each bullet point has been explained with accordance to its order in the previou
 
 The project will be provided as a web application in order to pass the hurdle of platform limitation. A simple, elegant and intuitive user interface will be provided along with a simple "help" to get the users as well as relief providers get started with the platform. Since the application will be a webApp, in the future it'll be easier to create mobile apps for the same.
 
-The user will get a map-view of the location he is in, up-to a certain radius, which will show locations of relief centers and the  directions to the nearest of them. They can also get personalised help options, and relief procedures based on their response in the forum. There will be multiple dynamic dashboards for different features such as maps, past data, relief calls etc.
+The user will get a map-view of the location he is in, up-to a certain radius, which will show locations of relief centers and the  directions to the nearest of them. They can also get personalised help options, and relief procedures based on their response in the forum. _There will be multiple dynamic dashboards for different features such as maps, past data, relief calls etc._
 
-An appealing feature of the website will be the implementation of the SMS (and telephonic, if time permits) endpoints. This will ensure that the people without internet can also gather information and send help calls to the website without having to go to the website. This will be done as any other automated SMS API endpoint works; a set of keywords to recognize the type of message and then providing all the services (for example providing textual directions to the nearest relief point) through SMS.
+_An appealing feature of the website will be the implementation of the SMS (and telephonic, if time permits) endpoints. This will ensure that the people without internet can also gather information and send help calls to the website without having to go to the website. This will be done as any other automated SMS API endpoint works; a set of keywords to recognize the type of message and then providing all the services (for example providing textual directions to the nearest relief point) through SMS._
 
 ### What dataset(s) are we using
 
@@ -148,20 +148,21 @@ Specifically for the part of prediction, we need to look at the pattern of natur
 ### What technologies are we using
 
 - Python 3.6.5 with Pipenv
-- Javascript
+- JavaScript
 - HTML5 + CSS3
 - GitHub for hosting
 - [Microsoft Azure Data Science Virtual Machine](https://azure.microsoft.com/en-in/services/virtual-machines/data-science-virtual-machines/) for training prediction models
 - Microsoft Azure Cloud for deployment
-- [Docker](https://www.docker.com/) to deploy as containers by handling microservices 
+- _[Docker](https://www.docker.com/) to deploy as containers by handling microservices_
 - [Flask](http://flask.pocoo.org/)
 - [Elasticsearch](https://www.elastic.co/products/elasticsearch) as a distributed RESTful search engine
-- [Twilio SMS API](https://www.twilio.com/docs/sms)
-- Maps API (Opensource such as [ModestMaps](http://modestmaps.com/) or [Leaflet](https://leafletjs.com/))
+- _[Twilio SMS API](https://www.twilio.com/docs/sms)_
+- Maps API (Opensource [LeafletJS](https://leafletjs.com/) with [OpenStreetMap](https://openstreetmap.org) as tile provider)
+- Geocoding API (Opensource [Nominatim](https://nominatim.openstreetmap.org/) API to search from OpenStreetMap data)
 - SQL Database as a service from [Azure](https://azure.microsoft.com/en-in/services/sql-database/).
 
 ### Final Notes
 
-We will be trying to give equal resources and time to every field of the problem statement but our main object will be to create a system which can help at the times of disaster; and is even remotely accessible (by SMS for instance). A simple interactive platform between helpers and needy will go a long way in improving the scenario and dependency on various social media platforms. We also have the plan (a far-fetched one) of embedding a system in the platform where people can add family members and then at times of disaster mark themselves safe (or in danger) and our system will do the hard work of carrying their message to all.
+We will be trying to give equal resources and time to every field of the problem statement but our main object will be to create a system which can help at the times of disaster; and is even remotely accessible (_by SMS for instance_). A simple interactive platform between helpers and needy will go a long way in improving the scenario and dependency on various social media platforms. We also have the plan (a far-fetched one) of embedding a system in the platform where people can add family members and then at times of disaster mark themselves safe (or in danger) and our system will do the hard work of carrying their message to all.
 
 We will be testing the technologies (mentioned above) and assessing if they need to be improved (or changed) to achieve the optimum efficiency for the goal.
