@@ -194,26 +194,30 @@
             Http.send();
 
             // alert("here");
-            Http.onreadystatechange = (err) => {
-                // alert(resp.json());
-                var data = JSON.parse(Http.responseText);
-                // alert(data.length);
-                // alert(data.length);
-                // console.log(data);
-                // alert(resp.text());
-                var tableHtml = "";
-                for(var i=0; i<data.length; i++){
-                    tableHtml= tableHtml + "<tr>\n" +
-                        "                        <td>"+data[i][1]+"</td>\n" +
-                        "                        <td>"+data[i][2]+"</td>\n" +
-                        "                        <td>"+data[i][6]+"</td>\n" +
-                        "                        <td>"+data[i][4]+"</td>\n" +
-                        "                        <td>"+data[i][0]+"</td>\n" +
-                        "                      </tr>\n"
+           Http.onreadystatechange = (err) => {
+                if(this.status == 4 && this.status == 200){
+                    // alert(resp.json());
+                    var data = JSON.parse(Http.responseText);
+                
+                    alert(data.length);
+                    alert(data.length);
+                    console.log(data);
+                    alert(resp.text());
+                
+                    var tableHtml = "";
+                    for(var i=0; i<data.length; i++){
+                        tableHtml= tableHtml + "<tr>\n" +
+                            "                        <td>"+data[i][1]+"</td>\n" +
+                            "                        <td>"+data[i][2]+"</td>\n" +
+                            "                        <td>"+data[i][6]+"</td>\n" +
+                            "                        <td>"+data[i][4]+"</td>\n" +
+                            "                        <td>"+data[i][0]+"</td>\n" +
+                            "                      </tr>\n"
+                    }
+                    // alert(tableHtml);
+                    document.getElementById("past_data").innerHTML=tableHtml;
+                    document.getElementById("view_more_link").innerHTML="<a href="+JSONurl+" target='_blank'>Download Full History</a>";
                 }
-                // alert(tableHtml);
-                document.getElementById("past_data").innerHTML=tableHtml;
-                document.getElementById("view_more_link").innerHTML="<a href="+JSONurl+" target='_blank'>Download Full History</a>";
             };
 
             const Http2 = new XMLHttpRequest();
@@ -225,19 +229,21 @@
 
             // alert("here");
             Http2.onreadystatechange = (err) => {
-                var data = JSON.parse(Http2.responseText);
-                var lat = data["results"][0]["geometry"]["location"]["lat"];
-                var lng = data["results"][0]["geometry"]["location"]["lng"];
-                // alert(lat);
-                // alert(lng);
-                var pred_url = "https://cfd-backend.herokuapp.com/predict_eq_mag?lat="+lat+"&long="+lng+"&depth=10";
+                if(this.status == 4 && this.status == 200){
+                    var data = JSON.parse(Http2.responseText);
+                    var lat = data["results"][0]["geometry"]["location"]["lat"];
+                    var lng = data["results"][0]["geometry"]["location"]["lng"];
+                    // alert(lat);
+                    // alert(lng);
+                    var pred_url = "https://cfd-backend.herokuapp.com/predict_eq_mag?lat="+lat+"&long="+lng+"&depth=10";
 
-                Http2.open("GET", pred_url);
-                Http2.send();
+                    Http2.open("GET", pred_url);
+                    Http2.send();
 
-                Http2.onreadystatechange = (err) => {
-                    // alert(Http2.responseText);
-                    document.getElementById("earth_pred").innerText="The predicted magnitude of next earthquake (at a depth of 10 kilometers) in "+searchQuery.replace(/\+/g," ")+" is " + Http2.responseText;
+                    Http2.onreadystatechange = (err) => {
+                        // alert(Http2.responseText);
+                        document.getElementById("earth_pred").innerText="The predicted magnitude of next earthquake (at a depth of 10 kilometers) in "+searchQuery.replace(/\+/g," ")+" is " + Http2.responseText;
+                    }
                 }
             }
         </script>
