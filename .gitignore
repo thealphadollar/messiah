@@ -1,7 +1,7 @@
 src/backend/data/earthquake_model.ckpt.*
 .idea/
 ./logs/*
-
+src/backend/__pycache__
 # VS Code
 .vscode
 *.env
