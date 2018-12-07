@@ -1,5 +1,13 @@
 # Microsoft CodeFunDo++ 2018 (Team Sorcerers)
 ![Messiah logo](https://github.com/thealphadollar/sorcerers-codefundo18/raw/master/src/frontend/img/logo.jpg)
+
+## Contributing
+
+Since the project is open source everyone is welcome to contribute.
+
+Please refer to CONTRIBUTING.md for more details.
+
+
 ## Implementation
 
 ### Deployment
