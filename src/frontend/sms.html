@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+      <title>Messiah</title>
+    </head>
+	<body>
+		<div class="heading">
+			<h1>SMS SERVICES</h1>
+		</div>
+		<nav>
+	    	<div class="nav-wrapper" style="background: #000066;">
+		      <a href="#!" class="brand-logo">MESSIAH</a>
+		      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		      <ul class="right hide-on-med-and-down">
+		        <li><a href="index.html">Home</a></li>
+		        <li><a href="about.html">About Us</a></li>
+		        <li><a href="dashboard.html">Dashboard</a></li>
+		        <li><a href="api.html">API service</a></li>
+            <li class="active"><a href="sms.html">SMS Services</a></li>
+		        <li><a href="scope.html">Further Scope</a></li>
+			  </ul>
+	    	</div>
+  		</nav>
+      <h3 style="color: #fff;text-align: center;">ADD FAMILY MEMBERS</h1>
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <div class="card indigo darken-3">
+            <div class="card-content white-text">
+              <span class="card-title" style="text-align: center;">What is it?</span>
+                <ul class="browser-default">
+                  <li>point 1</li>
+                  <li>point 2</li>
+                  <li>point 3</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header white-text collapse"><i class="material-icons">phone</i>Click to add phone number</div>
+              <div class="collapsible-body collapse-inner">
+                <h5 style="text-align: center;">Enter Phone Number</h5>
+                <div class="center">
+                  <form method="" action="">
+                    <input class="no-spinners" type="number" name="number" id="inpt-number" required>
+                    <input type="submit" class="btn waves-effect waves-light" name="submitno" value="Add" style="margin: 6px 0px 8px 10px;">
+                  </form>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header white-text collapse"><i class="material-icons">list</i>Choose message recipient</div>
+              <div class="collapsible-body collapse-inner">
+                <h5 style="text-align: center;">List of Numbers</h5>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header white-text collapse"><i class="material-icons">message</i>Click to send messages</div>
+              <div class="collapsible-body collapse-inner">
+                <h5 style="text-align: center;">Enter Message</h5>
+                <div class="center">
+                  <form method="" action="POST">
+                    <textarea name="message" style="border: 2px solid #888; border-radius: 10px; height: 10rem;width: 50%; padding: 10px; font-size: 1.5rem" required></textarea><br>
+                    <input type="submit" class="btn waves-effect waves-light" name="submitmsg" value="Send" style="margin-top: 20px">
+                  </form>
+                </div>
+              </div>
+            </li>
+          </ul>
+        
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+  			<ul class="sidenav" id="mobile-demo">
+    			<li><a href="index.html">Home</a></li>
+		        <li><a href="about.html">About Us</a></li>
+		        <li><a href="dashboard.html">Dashboard</a></li>
+		        <li><a href="api.html">API service</a></li>
+            <li class="active"><a href="sms.html">SMS Services</a></li>
+		        <li><a href="scope.html">Further Scope</a></li>
+  </ul>
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript">
+      	$(document).ready(function(){
+    $('.sidenav').sidenav();
+    $('.collapsible').collapsible();
+  });
+
+
+      </script>
+    </body>
+  </html>
+        

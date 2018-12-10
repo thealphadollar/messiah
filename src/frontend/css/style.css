@@ -51,3 +51,28 @@ h4 {
 	height: 240px; 
 	margin: 0;
 }
+
+.collapse{
+	background-color: #3f51b5;
+}
+.collapse-inner{
+	background-color: #9fa8da;
+}
+.no-spinners [type='number'] {
+  -moz-appearance:textfield;
+}
+
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#inpt-number{
+	width: 150px ;
+	border: 2px solid #888 ;
+	border-radius: 10px ;
+	height: 30px ;
+	padding: 2px ;
+	padding-left: 5px;
+}

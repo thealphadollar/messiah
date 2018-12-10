@@ -1,2 +1,2 @@
-model_checkpoint_path: "/media/hdd/Essentials/Chapter_Kgp_WOrk/OpenSource/sorcerers-codefundo18/src/backend/data/earthquake_model.ckpt"
-all_model_checkpoint_paths: "/media/hdd/Essentials/Chapter_Kgp_WOrk/OpenSource/sorcerers-codefundo18/src/backend/data/earthquake_model.ckpt"
+model_checkpoint_path: "earthquake_model.ckpt"
+all_model_checkpoint_paths: "earthquake_model.ckpt"
