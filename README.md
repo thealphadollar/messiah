@@ -1,5 +1,5 @@
 # Microsoft CodeFunDo++ 2018 (Team Sorcerers)
-![Messiah logo](https://github.com/Radhika007/messiah/raw/logo/src/frontend/img/colored-logo.png)
+![Messiah logo]('./src/frontend/img/readme_logo.jpeg')
 
 ## Contributing
 
