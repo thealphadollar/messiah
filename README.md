@@ -1,5 +1,5 @@
 # Microsoft CodeFunDo++ 2018 (Team Sorcerers)
-![Messiah logo]('src/frontend/img/readme_logo.jpeg')
+![Messiah logo](readme_logo.jpeg)
 
 ## Contributing
 
