@@ -12,6 +12,7 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
       <title>Messiah</title>
     </head>
 	<body>
@@ -39,14 +40,22 @@ due to <span id="calamity" style="color: #ffff99;">Flood</span>s?</pre>
     <pre style="font-size: 1.5rem; padding-bottom: 0; margin-bottom: 0;color: #fff">Enter your city/country, then press Enter</pre>
     <form action="dashboard.html" method="get">
       <div class="row center">
-          <div class="input-field col s7 l4 m4" style="color: #fff">
+          <div class="input-field col s12 l4 m4" style="color: #fff">
             <input id="textarea1" type="text" name="Country">
           </div>
 
       </div>
 
     </form>
-  </div>
+	<div class = "row center">
+		<div class ="col s12 l4 m6"></div>
+		<div class ="col s12 l8 m6">	
+		<a id="geoloc" style ="min-width:200px;border: 2px solid #fff;border-radius: 5px;padding:12px;background:#00e;">
+			<span style="font-size: 1.2rem;color: #fff"><i class="material-icons">room</i> Use your current location</span>
+		</a>
+		</div>
+	</div>
+  
 
       <div class="row center">
     <div class="col s12 m12 l12">
@@ -87,8 +96,13 @@ due to <span id="calamity" style="color: #ffff99;">Flood</span>s?</pre>
       <script type="text/javascript" src="js/jquery.easy-autocomplete.min.js"></script>
       <script type="text/javascript">
       	$(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
+   		    $('.sidenav').sidenav();
+			//sending users country and region
+			$('#geoloc').attr('href', function(index) {
+				return "dashboard.html" + '?Country='+geoplugin_countryName()+'&region='+geoplugin_region();
+			});
+ 		 });
+
       </script>
     <script>
         var options = {

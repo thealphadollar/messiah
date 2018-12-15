@@ -30,7 +30,8 @@ function createMap(mapId, place) {
  * plus, create a map of the given place using createMap
  * @param {*} placeName name of the place / search query to geocode
  */
-function geocodePlace(placeName) {
+/*function geocodePlace(placeName) {
+    searchQuery = "India";
     var reqdPlace = {
         latlong: [], importance: 0.0, name: ''
     };
@@ -49,5 +50,32 @@ function geocodePlace(placeName) {
     })
     request.open('GET', requestUrl);
     request.send();
+}*/
+function geocodePlace(splitLink) {
+    placeName = "India";
+    var reqdPlace = {
+        latlong: [], importance: 0.0, name: ''
+    };
+	if(splitLink.length>1){
+			if(splitLink[2]!=null)
+				placeName = splitLink[2];
+			else
+				placeName = splitLink[1].replace(/%20/g, " ");
+	}
+			var requestUrl = geocodingUrl + placeName;
+		    var request = new XMLHttpRequest();
+		    request.addEventListener('readystatechange', function() {
+			if(this.status == 200 && this.readyState == 4) {
+			    var resObj = JSON.parse(this.responseText);
+			    //reqdPlace.latlong = [splitLink[3],splitLink[4]];
+			    reqdPlace.latlong = [resObj[0].lat, resObj[0].lon];				
+			    reqdPlace.importance = resObj[0].importance;
+			    reqdPlace.name = resObj[0].display_name;
+
+			    createMap(mapId, reqdPlace);
+			}
+		    })
+		    request.open('GET', requestUrl);
+		    request.send();		   
 }
-geocodePlace(searchQuery);
+geocodePlace(splitLink);
