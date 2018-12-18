@@ -4,6 +4,7 @@
 	background:url(flags.png) no-repeat;
 	display: inline-block;
 	margin-right: 5px;
+	float: right;
 }
 
 .flag.flag-ad {background-position: -16px 0}
