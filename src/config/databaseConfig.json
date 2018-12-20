@@ -1,0 +1,8 @@
+{
+    "db": {
+        "user": "root",
+        "password": "password77",
+        "host": "35.200.235.106",
+        "database": "messiah"
+    }
+}
