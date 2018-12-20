@@ -6,6 +6,9 @@ const tileProviderUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const geocodingUrl = 'https://nominatim.openstreetmap.org/search?format=json&q=';
 const mapId = 'my_map_add';
 
+// make map global for use in other places
+var map;
+
 /**
  * Creates a Leaflet map 
  * @param {String} mapId must include the id of the div where map will be placed
@@ -14,14 +17,14 @@ const mapId = 'my_map_add';
 function createMap(mapId, place) {
     var zoomLevel = 5 + (6 * (1 - place.importance)); // zoom level on the basis of importance of place
 
-    var map = L.map(mapId).setView(place.latlong, zoomLevel);
+    map = L.map(mapId).setView(place.latlong, zoomLevel);
     L.tileLayer(tileProviderUrl, {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     // marker at the location
     L.marker(place.latlong).addTo(map)
-        .bindPopup('<b>' + place.name + '</b><br>This is the place that<br>you\'re looking for.')
+        .bindPopup('<b>' + place.name + '</b><br>This is the place that<br>you are looking for.')
         .openPopup();
 }
 
@@ -72,7 +75,9 @@ function geocodePlace(splitLink) {
 			    reqdPlace.importance = resObj[0].importance;
 			    reqdPlace.name = resObj[0].display_name;
 
-			    createMap(mapId, reqdPlace);
+                createMap(mapId, reqdPlace);
+                // mark relief centers
+                markReliefCenters();
 			}
 		    })
 		    request.open('GET', requestUrl);
