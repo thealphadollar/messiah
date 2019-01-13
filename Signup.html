@@ -1,32 +1,147 @@
 <html>
-<head><title>FORM</title></head>
+
+  <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/materialize.css">
+        <!-- to insert emojis https://afeld.github.io/emoji-css/-->
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+      <title>Messiah</title>
+    </head>
+
 <style>
+
+.signup 
+{
+  background: #800000;
+  
+}
+
+.create
+{
+	font-size: 40px;
+	margin: 0.67em 0;
+	font-family: monospace, monospace;
+	text-align: center;
+	margin: 1rem auto;
+	color: white;
+	font-weight: bold;
+}
+
+.label
+{
+	font-size: 25px;
+	margin: 0.67em 0;
+	font-family: monospace, monospace;
+	text-align: left;
+	margin: 1rem auto;
+	color: white;
+	padding: 20px;
+}
+
+.inputxx
+{
+	font-family: monospace, monospace;
+	margin: 1rem auto;
+	padding: 10px;
+	text-align: left;
+	vertical-align:middle;
+	margin-left:20px;
+	display:inline-block;
+	font-size: 15px;
+	width: 20em; 
+	margin-right: 2em;
+}
+
+.signupbox
+{
+	font-family: monospace, monospace;
+	font-weight: bold;
+	margin: 1rem auto;
+	padding: 10px ;
+	text-align: center;
+	vertical-align:middle;
+	display:inline-block;
+	font-size: 30px;
+	width: 6em;
+	margin-right: 2em;
+}
+.already
+{
+	font-size: 30px;
+	font-family: monospace, monospace;
+	margin: 1rem auto;
+	text-align: center;
+	text-decoration: none;
+}
 
 </style>
 <body>
+		<div class="heading">
+			<h1>SIGN-UP</h1>
+		</div>
+		<button onclick="goBack()">Go Back</button>
+<br> 
+		<nav>
+	    	<div class="nav-wrapper" style="background: #000066;">
+		      <a href="#!" class="brand-logo"><img src="img/for-dark-logo-bc.png"></a>
+		      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		      <ul class="right hide-on-med-and-down">
+		        <li><a href="index.html">Home</a></li>
+		        <li class="active"><a href="about.html">About Us</a></li>
+		        <li><a href="dashboard.html">Dashboard</a></li>
+		        <li><a href="api.html">API service</a></li>
+            <li><a href="sms.html">SMS Services</a></li>
+                <li><a href="scope.html">Further Scope</a></li>
+                <li> <a href="Login.html">Login</a></li>
+			  </ul>
+	    	</div>
+  		</nav>
 
-<center>
+  			<ul class="sidenav" id="mobile-demo">
+    			<li><a href="index.html">Home</a></li>
+		        <li class="active"><a href="about.html">About Us</a></li>
+		        <li><a href="dashboard.html">Dashboard</a></li>
+		        <li><a href="api.html">API service</a></li>
+            <li><a href="sms.html">SMS Services</a></li>
+		        <li><a href="scope.html">Further Scope</a></li>
+            <li><a href="Login.html">Login</a></li>
+  </ul>
 
-<div class="form-wrap" id="Sign up">
-<h1>SIGN-UP</h1>
-
-<p>To create an account, please fill in this form.</p>
-<hr>
-<label for="name"><b>NAME</b></label>
-<input type="text" placeholder="Enter name*" name="name" required><br>
-<label for="country"><b>COUNTRY</b></label>
-<input type="Text" placeholder="Enter country*" name="country" required><br>
-<label for="username"><b>USERNAME</b></label>
-<input type="Text" placeholder="Enter a username*" name="username" required><br>
-<label for="psw"><b>PASSWORD</b></label>
-<input type="password" placeholder="Enter password*" name="psw" required><br>
-<label for="psw-repeat"><b>REPEAT PASSWORD</b></label>
-<input type="password" placeholder="Repeat Password*" name="psw-repeat" required><br>
-<label for="phone_no"><b>PHONE NUMBER</b></label>
-<input type="text" placeholder="Enter phone number (optional)" name="phone"><br>
-<input type="button" value="Sign up"><br>
-<p class="change_link"><a href="Login.html">Already a member?Login.</a></p>
+ 
+  <div>
+<center> 	
+<p class="create">TO CREATE AN ACCOUNT, PLEASE FILL IN THIS FORM.</p>
+<label for="name" class="label"><b>NAME</b></label>
+<input type="text" placeholder="Enter name*" name="name" required class="inputxx"><br>
+<label for="country" class="label"><b>COUNTRY</b></label>
+<input type="Text" placeholder="Enter country*" name="country" required class="inputxx"><br>
+<label for="username" class="label"><b>USERNAME</b></label>
+<input type="Text" placeholder="Enter a username*" name="username" required class="inputxx"><br>
+<label for="psw" class="label"><b>PASSWORD</b></label>
+<input type="password" placeholder="Enter password*" name="psw" required class="inputxx"><br>
+<label for="psw-repeat" class="label"><b>REPEAT PASSWORD</b></label>
+<input type="password" placeholder="Repeat Password*" name="psw-repeat" required class="inputxx"><br>
+<label for="phone_no" class="label"><b>PHONE NUMBER</b></label>
+<input type="text" placeholder="Enter phone number (optional)" name="phone" class="inputxx"><br>
+<input type="button" value="Sign up" class="signupbox"><br>
+<p><a href="Login.html" style="color: white" class="already" style="text-decoration:none">Already a member ? Login !</a></p>
 </div>
 </center>
+
+<script>
+function goBack() {
+  window.history.back()
+}
+</script>
 </body>
 </html>
+
+vivek moar
+harshit
