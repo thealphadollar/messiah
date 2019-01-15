@@ -1,15 +1,134 @@
 <html>
-<head><title>Login</title></head>
-<center>
+ <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/materialize.css">
+        <!-- to insert emojis https://afeld.github.io/emoji-css/-->
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+      <title>Messiah</title>
+    </head>
+<style>
+
+.text99{ width:480px; float:left;}
+.create
+{
+	font-size: 40px;
+	margin: 0.67em 0;
+	font-family: monospace, monospace;
+	text-align: center;
+	margin: 1rem auto;
+	color: white;
+	font-weight: bold;
+}
+
+.label
+{
+	font-size: 25px;
+	margin: 0.67em 0;
+	font-family: monospace, monospace;
+	text-align: left;
+	margin: 1rem auto;
+	display: inline;
+	color: white;
+	padding: 20px;
+}
+
+.inputxx
+{
+	font-family: monospace, monospace;
+	margin: 1rem auto;
+	padding: 10px;
+	text-align: left;
+	vertical-align:middle;
+	margin-left:20px;
+	display:inline-block;
+	font-size: 15px;
+	width: 20em; 
+	margin-right: 2em;
+}
+
+.loginbox
+{
+	font-family: monospace, monospace;
+	font-weight: bold;
+	margin: 1rem auto;
+	padding: 8px ;
+	text-align: center;
+	vertical-align:middle;
+	display:inline-block;
+	font-size: 30px;
+	width: 5em;
+	margin-right: 2em;
+}
+.already
+{
+	font-size: 25px;
+	font-family: monospace, monospace;
+	text-align: center;
+	text-decoration: none;
+}
+
+</style>
+ 
+<body>
+		<div class="heading">
+			<h1>LOGIN</h1>
+		</div>
+		<button onclick="goBack()">Go Back</button>
+<br>
+		<nav>
+	    	<div class="nav-wrapper" style="background: #000066;">
+		      <a href="#!" class="brand-logo"><img src="img/for-dark-logo-bc.png"></a>
+		      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		      <ul class="right hide-on-med-and-down">
+		        <li><a href="index.html">Home</a></li>
+		        <li class="active"><a href="about.html">About Us</a></li>
+		        <li><a href="dashboard.html">Dashboard</a></li>
+		        <li><a href="api.html">API service</a></li>
+            <li><a href="sms.html">SMS Services</a></li>
+                <li><a href="scope.html">Further Scope</a></li>
+                <li> <a href="Login.html">Login</a></li>
+			  </ul>
+	    	</div>
+  		</nav>
+
+  			<ul class="sidenav" id="mobile-demo">
+    			<li><a href="index.html">Home</a></li>
+		        <li class="active"><a href="about.html">About Us</a></li>
+		        <li><a href="dashboard.html">Dashboard</a></li>
+		        <li><a href="api.html">API service</a></li>
+            <li><a href="sms.html">SMS Services</a></li>
+		        <li><a href="scope.html">Further Scope</a></li>
+            <li><a href="Login.html">Login</a></li>
+  </ul>
+  <div>
+
+
 <div id="Login">
-<h1>Login</h1>
-<label for="username"><b>USERNAME</b></label>
-<input type="text" placeholder="Enter Username*" name="username" required><br>
-<label for="password"><b>PASSWORD</b></label>
-<input type="password" placeholder="Enter your password*" name="password" required><br>
-<input type="submit" value="Login"><br>
-<a href="Signup.html">Not a member? Sign Up</a>
-</div>
-</center>
+<br>
+<center>
+<label for="username" class="label" display="inline"><b>USERNAME</b></label>
+<input type="text" placeholder="Enter Username*" name="username" required class="text99"><br>
+<label for="password" class="label" display="inline"><b>PASSWORD</b>
+<input type="password" placeholder="Enter your password*" name="password" required class="text99"></label><br>
+<input type="submit" value="Login" class="loginbox"><br>
+<a href="Signup.html" style="color: white" class="already" style="text-decoration:none">Not a member ? Sign Up !</a>
+</div></center>
+
+<script>
+function goBack() {
+  window.history.back()
+}
+</script>
+
+</body>
+
+
 </body>
 </html>
