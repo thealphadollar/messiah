@@ -12,8 +12,8 @@ Please refer to CONTRIBUTING.md for more details.
 
 ### Deployment
 
-The backend of the application is deployed at https://cfd-backend.herokuapp.com/<br/>
-The frontend website is hosted on Heroku at https://messiah-cfd.herokuapp.com/
+The app isn't yet deployed anywhere. It can be viewed by running src/index.html in the local browser.
+You are free to volunteer :)
 
 
 ### Directory Structure
