@@ -8,7 +8,7 @@ name = "pypi"
 [packages]
 coloredlogs = "*"
 itsdangerous = "*"
-tensorflow = "*"
+tensorflow = ">=1.12.1"
 pandas = "*"
 gunicorn = "*"
 reverse-geocode = "*"
